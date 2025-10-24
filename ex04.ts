@@ -12,33 +12,39 @@ class televisor {
   }
   
   mudarCanal(a: number){
+  this.numCanal = a 
     if(a < 0 || a >= 50){
       console.log("Digite um canal válido")
     } else {
-      console.log(`O canal escolhido foi ${a}`)
+      console.log(`O canal escolhido foi ${this.numCanal}`)
     }
   }
   
   aumVolume(a: number){
-    if(a + this.volumeAtual > 100){
+    const volumeAumentado = this.volumeAtual + a
+    if(volumeAumentado > 100){
       console.log("O volume máximo é 100, tente novamente com um valor menor")
-    } else if (a + this.volumeAtual < 0){
+    } else if (volumeAumentado < 0){
       console.log("O volume mínimo é 0 (mudo), tente novamente com um valor maior")
     } else {
-      console.log(`O volume atual é de ${a + this.volumeAtual}`)
+      this.volumeAtual = volumeAumentado 
+      console.log(`O volume atual é de ${volumeAumentado}`)
     }
   }
 
   dimVolume(a: number){
-    if(this.volumeAtual - a < 0){
+    const volumeDiminuido = this.volumeAtual - a
+    if(volumeDiminuido < 0){
       console.log("O volume mínimo é 0 (mudo), tente novamente")
     } else {
-      console.log(`O volume atual é de ${this.volumeAtual - a}`)
+      this.volumeAtual = volumeDiminuido
+      console.log(`O volume atual é de ${volumeDiminuido}`)
     }
   }
 }
 
 const televisor1 = new televisor(4, 15)
-televisor1.mudarCanal(40)
+televisor1.mudarCanal(20)
 televisor1.aumVolume(15)
-televisor1.dimVolume(20)
+televisor1.dimVolume(15)
+console.log(televisor1.volumeAtual)
