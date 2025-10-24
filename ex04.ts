@@ -43,8 +43,9 @@ class televisor {
   }
 }
 
-const televisor1 = new televisor(4, 15)
-televisor1.mudarCanal(20)
-televisor1.aumVolume(15)
-televisor1.dimVolume(15)
-console.log(televisor1.volumeAtual)
+/*Esses testes foram feitos para verificar o processo de atribuição*/
+// const televisor1 = new televisor(4, 15)
+// televisor1.mudarCanal(20)
+// televisor1.aumVolume(15)
+// televisor1.dimVolume(15)
+// console.log(televisor1.volumeAtual)
